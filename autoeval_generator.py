@@ -13,7 +13,7 @@ openai.api_key = ' Enter you API key'
 
 # Reads prompts from a CSV file
 try:
-    prompt_df = pd.read_csv('prompts.csv', encoding='utf-8')
+    prompt_df = pd.read_csv('Prompts.csv', encoding='utf-8')
 except Exception as e:
     print("Error reading prompts.csv:", str(e))
     exit()
