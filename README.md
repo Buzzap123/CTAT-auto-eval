@@ -8,7 +8,7 @@ Full responses are saved as `.txt` files in `results/generated_responses/`. File
 
 ### Usage
 
-1. Place example TSVs in `original_files/`.
+1. Place example TSVs in `template_files/`.
 2. Add generation prompts to the `prompt` column in `prompts.csv`.
 3. Configure `model_name` and API credentials. Do not commit your API key.
 4. Run `autoeval_generator.py`.
