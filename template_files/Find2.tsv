@@ -1,0 +1,151 @@
+Problem Name	Find2.brd
+%(problemstatement)%	Find some common multiples of 6 and 12. Then, find the least common multiple of 6 and 12.
+%(w1)%	6
+%(leastcommonmult)%	The least common multiple of 6 and 12 is :
+%(w2)%	12
+%(w1m1_P1)%	6
+%(w1m2)%	12
+%(w1m3)%	18
+%(w1m4)%	24
+%(w1m5)%	30
+%(w1m6)%	36
+%(w1m7)%	42
+%(w1m8)%	48
+%(w1m9)%	54
+%(w1m0)%	60
+%(w2m1_P1)%	12
+%(w2m2)%	24
+%(w2m3)%	36
+%(w2m4)%	48
+%(w2m5)%	60
+%(w2m6)%	72
+%(w2m7)%	84
+%(w2m8)%	96
+%(w2m9)%	108
+%(w2m0)%	120
+%(w1cb1)%	w1cb1_check: true
+%(w1cb2)%	w1cb2_check: true
+%(w1cb3)%	w1cb3_check: true
+%(w1cb4)%	w1cb4_check: true
+%(w1cb5)%	w1cb5_check: true
+%(w1cb6)%	w1cb6_check: true
+%(w1cb7)%	w1cb7_check: true
+%(w1cb8)%	w1cb8_check: true
+%(w1cb9)%	w1cb9_check: true
+%(w1cb10)%	w1cb10_check: true
+%(w2cb1)%	w2cb1_check: true
+%(w2cb2)%	w2cb2_check: true
+%(w2cb3)%	w2cb3_check: true
+%(w2cb4)%	w2cb4_check: true
+%(w2cb5)%	w2cb5_check: true
+%(w2cb6)%	w2cb6_check: true
+%(w2cb7)%	w2cb7_check: true
+%(w2cb8)%	w2cb8_check: true
+%(w2cb9)%	w2cb9_check: true
+%(w2cb10)%	w2cb10_check: true
+%(lcm)%	12
+%(done)%	-1
+%(No_Selection_P1)%	w1cb[13579]_check: true
+%(No_Selection_P2)%	w2cb[a]_check: true
+%(w1m1_P2)%	12
+%(w2m1_P2)%	24
+Path 1	94 -> 95 -> 96 -> 97 -> 1 -> 3 -> 5 -> 7 -> 9 -> 11 -> 13 -> 15 -> 17 -> 19 -> 21 -> 23 -> 25 -> 27 -> 29 -> 31 -> 33 -> 35 -> 37 -> 39 -> 41 -> 43 -> 45 -> 47 -> 49 -> 51 -> 53 -> 55 -> 57 -> 59 -> 61 -> 63 -> 65 -> 67 -> 69 -> 71 -> 73 -> 75 -> 77 -> 79 -> 81 -> 83
+%(problemstatement_hint_1)%	Please enter "%(problemstatement)%" in the highlighted field.
+%(w1_hint_1)%	Please enter "%(w1)%" in the highlighted field.
+%(leastcommonmult_hint_1)%	Please enter "%(leastcommonmult)%" in the highlighted field.
+%(w2_hint_1)%	Please enter "%(w2)%" in the highlighted field.
+%(w1m1_P1_hint_1)%	What is the first positive multiple of %(w1m1_P1)%?
+%(w1m1_P1_hint_2)%	%(w1m1_P1)% X 1 = %(w1m1_P1)%
+%(w1m1_P1_hint_3)%	Please enter '%(w1m1_P1)%' in the highlighted field.
+%(w1m2_hint_1)%	What is the second positive multiple of 6?
+%(w1m2_hint_2)%	6 X 2 = %(w1m2)%
+%(w1m2_hint_3)%	Please enter '%(w1m2)%' in the highlighted field.
+%(w1m3_hint_1)%	What is the third positive multiple of 6?
+%(w1m3_hint_2)%	6 X 3 = %(w1m3)%
+%(w1m3_hint_3)%	Please enter '%(w1m3)%' in the highlighted field.
+%(w1m4_hint_1)%	What is the fourth positive multiple of 6?
+%(w1m4_hint_2)%	6 X 4 = %(w1m4)%
+%(w1m4_hint_3)%	Please enter '%(w1m4)%' in the highlighted field.
+%(w1m5_hint_1)%	What is the fifth positive multiple of 6?
+%(w1m5_hint_2)%	6 X 5 = %(w1m5)%
+%(w1m5_hint_3)%	Please enter '%(w1m5)%' in the highlighted field.
+%(w1m6_hint_1)%	What is the sixth positive multiple of 6?
+%(w1m6_hint_2)%	6 X 6 = %(w1m6)%
+%(w1m6_hint_3)%	Please enter '%(w1m6)%' in the highlighted field.
+%(w1m7_hint_1)%	What is the seventh positive multiple of 6?
+%(w1m7_hint_2)%	6 X 7 = %(w1m7)%
+%(w1m7_hint_3)%	Please enter '%(w1m7)%' in the highlighted field.
+%(w1m8_hint_1)%	What is the eighth positive multiple of 6?
+%(w1m8_hint_2)%	6 X 8 = %(w1m8)%
+%(w1m8_hint_3)%	Please enter '%(w1m8)%' in the highlighted field.
+%(w1m9_hint_1)%	What is the ninth positive multiple of 6?
+%(w1m9_hint_2)%	6 X 9 = %(w1m9)%
+%(w1m9_hint_3)%	Please enter '%(w1m9)%' in the highlighted field.
+%(w1m0_hint_1)%	What is the tenth positive multiple of 6?
+%(w1m0_hint_2)%	6 X 10 = %(w1m0)%
+%(w1m0_hint_3)%	Please enter '%(w1m0)%' in the highlighted field.
+%(w2m1_P1_hint_1)%	What is the first positive multiple of %(w2m1_P1)%?
+%(w2m1_P1_hint_2)%	%(w2m1_P1)% X 1 = %(w2m1_P1)%
+%(w2m1_P1_hint_3)%	Please enter '%(w2m1_P1)%' in the highlighted field.
+%(w2m2_hint_1)%	What is the second positive multiple of 12?
+%(w2m2_hint_2)%	12 X 2 = %(w2m2)%
+%(w2m2_hint_3)%	Please enter '%(w2m2)%' in the highlighted field.
+%(w2m3_hint_1)%	What is the third positive multiple of 12?
+%(w2m3_hint_2)%	12 X 3 = %(w2m3)%
+%(w2m3_hint_3)%	Please enter '%(w2m3)%' in the highlighted field.
+%(w2m4_hint_1)%	What is the fourth positive multiple of 12?
+%(w2m4_hint_2)%	12 X 4 = %(w2m4)%
+%(w2m4_hint_3)%	Please enter '%(w2m4)%' in the highlighted field.
+%(w2m5_hint_1)%	What is the fifth positive multiple of 12?
+%(w2m5_hint_2)%	12 X 5 = %(w2m5)%
+%(w2m5_hint_3)%	Please enter '%(w2m5)%' in the highlighted field.
+%(w2m6_hint_1)%	What is the sixth positive multiple of 12?
+%(w2m6_hint_2)%	12 X 6 = %(w2m6)%
+%(w2m6_hint_3)%	Please enter '%(w2m6)%' in the highlighted field.
+%(w2m7_hint_1)%	What is the seventh positive multiple of 12?
+%(w2m7_hint_2)%	12 X 7 = %(w2m7)%
+%(w2m7_hint_3)%	Please enter '%(w2m7)%' in the highlighted field.
+%(w2m8_hint_1)%	What is the eighth positive multiple of 12?
+%(w2m8_hint_2)%	12 X 8 = %(w2m8)%
+%(w2m8_hint_3)%	Please enter '%(w2m8)%' in the highlighted field.
+%(w2m9_hint_1)%	What is the ninth positive multiple of 12?
+%(w2m9_hint_2)%	12 X 9 = %(w2m9)%
+%(w2m9_hint_3)%	Please enter '%(w2m9)%' in the highlighted field.
+%(w2m0_hint_1)%	What is the tenth positive multiple of 12?
+%(w2m0_hint_2)%	12 X 10 = %(w2m0)%
+%(w2m0_hint_3)%	Please enter '%(w2m0)%' in the highlighted field.
+%(w1cb1_hint_1)%	Looking at the multiples you've entered, find one that is the same in both columns. This number, divisible by both numbers, is a common multiple. Click the checkbox to the right of that multiple in both columns.
+%(w1cb2_hint_1)%	Looking at the multiples you've entered, find one that is the same in both columns. This number, divisible by both numbers, is a common multiple. Click the checkbox to the right of that multiple in both columns.
+%(w1cb3_hint_1)%	Looking at the multiples you've entered, find one that is the same in both columns. This number, divisible by both numbers, is a common multiple. Click the checkbox to the right of that multiple in both columns.
+%(w1cb4_hint_1)%	Looking at the multiples you've entered, find one that is the same in both columns. This number, divisible by both numbers, is a common multiple. Click the checkbox to the right of that multiple in both columns.
+%(w1cb5_hint_1)%	Looking at the multiples you've entered, find one that is the same in both columns. This number, divisible by both numbers, is a common multiple. Click the checkbox to the right of that multiple in both columns.
+%(w1cb6_hint_1)%	Looking at the multiples you've entered, find one that is the same in both columns. This number, divisible by both numbers, is a common multiple. Click the checkbox to the right of that multiple in both columns.
+%(w1cb7_hint_1)%	Looking at the multiples you've entered, find one that is the same in both columns. This number, divisible by both numbers, is a common multiple. Click the checkbox to the right of that multiple in both columns.
+%(w1cb8_hint_1)%	Looking at the multiples you've entered, find one that is the same in both columns. This number, divisible by both numbers, is a common multiple. Click the checkbox to the right of that multiple in both columns.
+%(w1cb9_hint_1)%	Looking at the multiples you've entered, find one that is the same in both columns. This number, divisible by both numbers, is a common multiple. Click the checkbox to the right of that multiple in both columns.
+%(w1cb10_hint_1)%	Looking at the multiples you've entered, find one that is the same in both columns. This number, divisible by both numbers, is a common multiple. Click the checkbox to the right of that multiple in both columns.
+%(w2cb1_hint_1)%	Looking at the multiples you've entered, find one that is the same in both columns. This number, divisible by both numbers, is a common multiple. Click the checkbox to the right of that multiple in both columns.
+%(w2cb2_hint_1)%	Looking at the multiples you've entered, find one that is the same in both columns. This number, divisible by both numbers, is a common multiple. Click the checkbox to the right of that multiple in both columns.
+%(w2cb3_hint_1)%	Looking at the multiples you've entered, find one that is the same in both columns. This number, divisible by both numbers, is a common multiple. Click the checkbox to the right of that multiple in both columns.
+%(w2cb4_hint_1)%	Looking at the multiples you've entered, find one that is the same in both columns. This number, divisible by both numbers, is a common multiple. Click the checkbox to the right of that multiple in both columns.
+%(w2cb5_hint_1)%	Looking at the multiples you've entered, find one that is the same in both columns. This number, divisible by both numbers, is a common multiple. Click the checkbox to the right of that multiple in both columns.
+%(w2cb6_hint_1)%	Looking at the multiples you've entered, find one that is the same in both columns. This number, divisible by both numbers, is a common multiple. Click the checkbox to the right of that multiple in both columns.
+%(w2cb7_hint_1)%	Looking at the multiples you've entered, find one that is the same in both columns. This number, divisible by both numbers, is a common multiple. Click the checkbox to the right of that multiple in both columns.
+%(w2cb8_hint_1)%	Looking at the multiples you've entered, find one that is the same in both columns. This number, divisible by both numbers, is a common multiple. Click the checkbox to the right of that multiple in both columns.
+%(w2cb9_hint_1)%	Looking at the multiples you've entered, find one that is the same in both columns. This number, divisible by both numbers, is a common multiple. Click the checkbox to the right of that multiple in both columns.
+%(w2cb10_hint_1)%	Looking at the multiples you've entered, find one that is the same in both columns. This number, divisible by both numbers, is a common multiple. Click the checkbox to the right of that multiple in both columns.
+%(lcm_hint_1)%	Look at the common multiples you've identified above. Which is the least (lowest)?
+%(lcm_hint_2)%	The least common multiple is %(lcm)%.
+%(done_hint_1)%	Please click on the highlighted button.
+Path 2	90
+%(No_Selection_P1_hint_1)%	Please provide your answer 'No_Value' in the highlighted element.
+%(No_Selection_P1_buggy_msg_1)%	This is not a common multiple.
+Path 3	93
+%(No_Selection_P2_hint_1)%	Please provide your answer 'No_Value' in the highlighted element.
+%(No_Selection_P2_buggy_msg_1)%	This is not a common multiple.
+Path 4	86
+%(w1m1_P2_hint_1)%	Please enter '%(w1m1_P2)%' in the highlighted field.
+%(w1m1_P2_buggy_msg_1)%	<%=input%> is a correct multiple. However, you should fill in multiples in order, starting with the smallest positive multiple.
+Path 5	88
+%(w2m1_P2_hint_1)%	Please enter '%(w2m1_P2)%' in the highlighted field.
+%(w2m1_P2_buggy_msg_1)%	<%=input%> is a correct multiple. However, you should fill in multiples in order, starting with the smallest positive multiple.

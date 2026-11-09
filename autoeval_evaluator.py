@@ -8,17 +8,17 @@ output_folder = 'results/generated_responses/'
 template_folder = 'template_files/'
 
 columns = [
-    'Tutor name', 'Problem number', 'Problem',
+    'Template File', 'Problem',
     'Delivered', 'Importable', 'Order of Path',
     'Language', 'Hint Accuracy', 'Success Messages',
     'Buggy Links', 'Column Count', 'Labels Matching',
     'Constant rows', 'Hint Structure', 'Answers Correct',
-    '(Same, Concept)', '(Same, Complexity)',
-    '(Different, Scenario)', '(Different, Values)',
-    '(Directly usable, Realism)',
-    '(Directly usable, Question Still in Story)',
-    "(Same, Doesn't Over-Scaffold)",
-    'Comments', 'Response File', 'TSV Extraction'
+    'Concept', 'Complexity',
+    'Scenario', 'Values',
+    'Realism',
+    'Question Still in Story',
+    "Doesn't Over-Scaffold",
+    'Comments'
 ]
 
 def extract_tsv(text):
@@ -42,6 +42,8 @@ all_evaluations = []
 
 for file in all_response_files:
     file_path = os.path.join(output_folder, file)
+    
+    template_name = file.rsplit('_prompt', 1)[0] + '.tsv'
 
     try:
         with open(file_path, encoding='utf-8') as response_file:
@@ -54,7 +56,7 @@ for file in all_response_files:
         ))
 
         #Load the corresponding template file
-        template_name = file.rsplit('_prompt', 1)[0] + '.tsv'
+        
         template_path = os.path.join(template_folder, template_name)
 
         with open(template_path, encoding='utf-8-sig', newline='') as template_file:
@@ -93,8 +95,7 @@ for file in all_response_files:
                 break
         
         all_evaluations.append({
-            'Response File': file,
-            'TSV Extraction': 'Pass',
+            'Template File': template_name,
             'Column Count': 'Pass' if column_count_correct else 'Fail',
             'Labels Matching': 'Pass' if labels_matching else 'Fail',
             'Comments': ''
@@ -102,9 +103,8 @@ for file in all_response_files:
 
     except ValueError as e:
         all_evaluations.append({
-            'Response File': file,
-            'TSV Extraction': 'Fail',
-            'Comments': str(e)
+            'Template File': template_name,
+            'Comments': f"TSV extraction failed for {file}: {e}"
         })
 
 # Creates a DataFrame with all metrics
