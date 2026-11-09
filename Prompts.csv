@@ -1,12 +1,28 @@
 prompt
-"Please edit the provided text by removing any personally identifiable information (PII). This includes names, company names, places of origin, current living locations, addresses, and social media links. Replace all removed PII with '[REDACTED]'. Ensure that the rest of the text remains unchanged, word for word. Maintain the original punctuation, quotation marks, spaces, and line breaks. If the text does not contain any PII, return it as is.
+"I want you to be an educational problem-maker. Your purpose is to create a new problem set for an intelligent tutoring system. You will use a Mass Production table when creating these problems.
+      A Mass Production Table is a table where each column except for the first corresponds to a single problem. Each column contains various aspects of the problem, such as the problem statement, numeric values or expressions for the steps of the problem, or hint text for specific steps. Each entry in the column represents a specific detail or component of the problem, with different entries on the same row separated by a tabular space. The first column of the Mass Production Table contains labels that define the meaning of each row, and almost all of these labels start and end with %.                                                                                                      
+      Your task is to create 1 new problem for a problem set entitled eval.tsvs. 
+      To help you effectively create these new problems, you will be provided with a Mass Production Table in .tsv as an example and a series of step-by-step instructions. Complete the following steps internally. Any text other than the final table must appear outside the tsv block.
+      1. Analyze the given table according to the information about Mass Production tables you were given earlier.
+      2. Generate expressions for the new problems. The new expressions must test the same underlying concepts, mathematical skills, and types of operations as the corresponding expressions in the provided table. These problems should also preserve a similar level of complexity as well. 
+      3. For each expression, choose values to substitute into the expression, and calculate the outputs. Use the example Mass Production table to determine how many values are needed for each expression. Ensure the following:
+      - Each generated problem must have a final answer that is different from the final answer of every other generated problem and from the corresponding template problem.
+      - If an output does not meet these criteria, pick new values accordingly until all criteria are met.
+      4.  Preserve the template’s problem presentation style. If the template contains a word problem, generate stories for the new expressions with the appropriate questions based on the chosen values. The formatting of the stories should be the same as the stories found within the Mass Production Table.
+      - If the template contains only mathematical expressions or a visual task, preserve that format and do not add a story.
+      - For templates containing stories, use meaningfully different scenarios, settings, and/or characters. Do not create a different story by renaming characters, objects, or locations while keeping the same scenario/exact same information order.
+      - For each generated problem, fill in hint labels that make sense for the given problem and step. The final hint should serve the same bottom-out function as the final hint in the template. All generated hints must be correct as well given the context of the generated problem.
+      5. For the generated problems, you will need to fill in all the values of the column for each problem, matching the correct values to the correct labels. To help you with this process, below is a list of descriptions for some of the labels for you to follow:
+      - The row with label %(startStateNodeName)% should be left blank.
+      - The label column should be identical to the template label column. Do not add, remove, rename, or reorder any labels.
+      - Preserve the template’s path rows exactly, including identifiers and their order.
+      6. The new problems should be formatted as a new table with the same labels found in the given Mass Production Table. This new table should have exactly [2] columns, one for the labels and [1] for the generated problem. It should also have exactly the template row number of rows.
+  7. Review the generated table, ensuring all the criteria below are satisfied:
+      - Double-check that all numeric values correspond to their appropriate labels.
+      - Check that all hints are correct and correspond to their steps. 
+      -Check that the stories are consistent with the generated expressions and values.
+      If there are any inaccuracies, fix them, and generate a newer table in place.
+  8. Print the complete table inside one Markdown code block labeled tsv. Put the opening three backticks followed immediately by tsv on their own line, with no trailing spaces. Begin the table on the next line and put the closing three backticks on the line immediately after the last row. Use actual tabs between cells. Do not truncate entries or use LaTeX formatting.
+      Below is the existing Mass Production Table for you to analyze and create the problems from it:"
 
-For example, if the input is:
-
-Dear All,You'll find below a Linkedin group I just create.http://www.linkedin.com/groups?home=&gid=5167867&trk=anet_ug_hmIt will be hold in English (as a second language) and is open to any student of Coursera for the 'Introduction to Financial Accounting'.The purpose will be to exchange on each weekly readings, get feed-back, experience from each other, to ask and answer questions etc...Link you soon!Let's team work!
-
-The output must be:
-Dear All,You'll find below a Linkedin group I just create.[REDACTED]It will be hold in English (as a second language) and is open to any student of Coursera for the 'Introduction to Financial Accounting'.The purpose will be to exchange on each weekly readings, get feed-back, experience from each other, to ask and answer questions etc...Link you soon!Let's team work!
-
-Please repeat this process with the following post:"
 
