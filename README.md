@@ -12,5 +12,6 @@ Full responses are saved as `.txt` files in `results/generated_responses/`. File
 2. Add generation prompts to the `prompt` column in `prompts.csv`.
 3. Configure `model_name` and API credentials. Do not commit your API key.
 4. Run `autoeval_generator.py`.
+5. Run `autoeval_evaluator.py`.
 
 API compatibility and output-token limits still need to be addressed before testing.
