@@ -1,3 +1,4 @@
+#takes in saved model responses -> extracts TSVs from responses -> compares column counts and labels with templates -> saves evaluation CSV
 import pandas as pd
 import os
 import csv 
