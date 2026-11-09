@@ -4,7 +4,7 @@
 
 `autoeval_generator.py` reads each example TSV in `template_files/` and sends the entire table with each prompt from `prompts.csv` to the configured OpenAI model.
 
-Full responses are saved as `.txt` files in `results/generated_responses/`. Filenames identify the template, prompt number, and model. The evaluator will later extract the generated TSV from each response.
+Full responses are saved as `.txt` files in `results/generated_responses/`. Filenames identify the template, prompt number, and model. The evaluator will later extract the generated TSV from each response and evaluate the templates, creating a table that will include the evaluation of template files in the rows.
 
 ### Usage
 
