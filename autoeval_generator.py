@@ -4,7 +4,7 @@ import pandas as pd
 import os
 
 # Specify the relative folder paths for original files and output
-original_folder = 'original_files/'
+original_folder = 'template_files/'
 output_folder = 'results/generated_responses/'
 model_name = "gpt-4"
 
