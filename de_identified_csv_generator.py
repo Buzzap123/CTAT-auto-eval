@@ -1,10 +1,12 @@
+#takes in tsv -> API calls to models -> saves full response as a text file for evaluator
 import openai
 import pandas as pd
 import os
 
 # Specify the relative folder paths for original files and output
 original_folder = 'original_files/'
-output_folder = 'results/OpenAI_redacted_files/'
+output_folder = 'results/generated_responses/'
+model_name = "gpt-4"
 
 # Set the API key for openai
 openai.api_key = ' Enter you API key'  
@@ -26,14 +28,14 @@ def api_call(post_text, prompt):
     try:
         message_content = f'{prompt}\n{post_text}'
         response_check = openai.ChatCompletion.create(
-            model="gpt-4",
+            model=model_name,
             messages=[
                 {"role": "system", "content": "You are a helpful assistant."},
                 {"role": "user", "content": message_content}
             ],
             max_tokens=1000
         )
-        return response_check["choices"][0]["message"]["content"].strip()
+        return response_check["choices"][0]["message"]["content"]
     except Exception as e:
         print(f"API call error for post_text: {post_text[:50]}", str(e))
         return "API_ERROR"
@@ -45,23 +47,28 @@ except Exception as e:
     exit()
 
 for original_file in original_files:
-    if original_file.endswith('.csv'):
+    if original_file.endswith('.tsv'):
         try:
-            original_df = pd.read_csv(os.path.join(original_folder_path, original_file), encoding='utf-8', encoding_errors='replace')
+            # Reads the entire TSV instead of individual forum posts
+            with open(os.path.join(original_folder_path, original_file), encoding='utf-8') as file:
+                original_text = file.read()
+
             # Iterates for each prompt
             for index, row in prompt_df.iterrows():
                 prompt = row['prompt']
-                for row_idx in original_df.index:
-                    post_text_response = api_call(original_df.loc[row_idx, 'post_text_original'], prompt)
-                    original_df.loc[row_idx, 'post_text_OpenAI_redacted'] = post_text_response
-                    
-                    print(f"Updated row {row_idx+1} for prompt {index+1} in dataframe.")
+                response = api_call(original_text, prompt)
 
-                # Saves the CSV for the current prompt
-                csv_filename = f'{original_file.replace(".csv", "")}_prompt{index+1}_openai_gpt4.csv'
-                output_file_path = os.path.join(output_folder, csv_filename)
-                original_df.to_csv(output_file_path, index=False)
-                print(f"Saved file {output_file_path} for prompt {index+1}")
+                if response == "API_ERROR":
+                    continue
+
+                # Saves the full model response for the current prompt
+                response_filename = f'{original_file.replace(".tsv", "")}_prompt{index+1}_openai_{model_name}.txt'
+                output_file_path = os.path.join(output_folder, response_filename)
+
+                with open(output_file_path, 'w', encoding='utf-8', newline='') as file:
+                    file.write(response)
+
+                print(f"Saved file {output_file_path}")
 
         except Exception as e:
             print(f"Error processing file {original_file}:", str(e))
