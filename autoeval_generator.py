@@ -1,5 +1,5 @@
 #takes in tsv -> API calls to models -> saves full response as a text file for evaluator
-import openai
+from openai import OpenAI
 import pandas as pd
 import os
 
@@ -9,7 +9,7 @@ output_folder = 'results/generated_responses/'
 model_name = "gpt-4"
 
 # Set the API key for openai
-openai.api_key = ' Enter you API key'  
+client = OpenAI()
 
 # Reads prompts from a CSV file
 try:
@@ -27,19 +27,24 @@ original_folder_path = os.path.join(os.getcwd(), original_folder)
 def api_call(post_text, prompt):
     try:
         message_content = f'{prompt}\n{post_text}'
-        response_check = openai.ChatCompletion.create(
+
+        response_check = client.chat.completions.create(
             model=model_name,
             messages=[
                 {"role": "system", "content": "You are a helpful assistant."},
                 {"role": "user", "content": message_content}
             ],
-            max_tokens=1000
+            max_tokens=4000
         )
-        return response_check["choices"][0]["message"]["content"]
-    except Exception as e:
-        print(f"API call error for post_text: {post_text[:50]}", str(e))
-        return "API_ERROR"
 
+        if response_check.choices[0].finish_reason == "length":
+            print("Warning: response reached the token limit.")
+
+        return response_check.choices[0].message.content
+
+    except Exception as e:
+        print("API call error:", str(e))
+        return "API_ERROR"
 try:
     original_files = os.listdir(original_folder_path)
 except Exception as e:
