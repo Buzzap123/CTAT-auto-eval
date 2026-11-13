@@ -1,3 +1,4 @@
+Here is the repsonse:
 ```tsv
 Problem Name	science.brd
 %(problemstatement)%	At a science museum, a rotating planet model completes one full turn every 4 minutes, while a nearby moon model completes one full turn every 8 minutes. Both models start a turn together. List some common multiples of 4 and 8 to find when they will next complete a turn together. Then find the least common multiple of 4 and 8.

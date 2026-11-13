@@ -65,6 +65,28 @@ for file in all_response_files:
                 template_file,
                 delimiter='\t'
             ))
+        #Automated Structural Evaluation Logic
+
+        #Delivered
+        isResponse = tsv_text.strip()
+
+        #Order of Path
+        template_paths = []
+        for row in template_rows:
+            if len(row)>0 and row[0].startswith('Path '):
+                template_paths.append(row)
+
+        generated_paths = []
+        for row in generated_rows:
+            if len(row) > 0 and row[0].startswith('Path '):
+                generated_paths.append(row)
+
+        if template_paths != generated_paths:
+            path_result = 'Fail'
+        elif len(template_paths) == 0:
+            path_result = 'N/A'
+        else:
+            path_result = 'Pass'
 
         # Compare Labels Matching
         generated_labels = []
@@ -94,10 +116,12 @@ for file in all_response_files:
             if len(row) != 2:
                 column_count_correct =False 
                 break
-        
+
         all_evaluations.append({
+            'Delivered': 'Pass' if isResponse else 'Fail',
             'Template File': template_name,
             'Column Count': 'Pass' if column_count_correct else 'Fail',
+            'Order of Path': path_result, 
             'Labels Matching': 'Pass' if labels_matching else 'Fail',
             'Comments': ''
         })
@@ -105,6 +129,7 @@ for file in all_response_files:
     except ValueError as e:
         all_evaluations.append({
             'Template File': template_name,
+            'Delivered': 'Fail',
             'Comments': f"TSV extraction failed for {file}: {e}"
         })
 
